@@ -4,7 +4,7 @@ on:
   schedule:
     # 11pm UTC on the 13th of the month
     # https://crontab.guru/#0_16_7_*_*
-    - cron: "*/15 * * * *"
+    - cron: "0 23 3 * *"
   workflow_dispatch:
 
 jobs:
