@@ -1,7 +1,7 @@
 from venmo_api import Client
 from utils import Venmo
 
-access_token = Client.get_access_token(username='Andrew-D-Camp',
-                                       password='Oligarchy7!')
+access_token = Client.get_access_token(username='',
+                                       password='')
 venmo = Venmo(access_token)
-userId = venmo.get_user_id_by_username("Andrew-D-Camp")
+userId = venmo.get_user_id_by_username("")
