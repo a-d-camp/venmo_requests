@@ -17,9 +17,9 @@ client = Client(access_token=access_token)
 
 # make requests
 for id in request_data:
-    #friend_id = request_data[id]['friend_id']
-    name = request_data[id]['friend'].upper()
-    friend_id = os.environ.get(name)
+    friend_id = request_data[id]['friend_id']
+    #name = request_data[id]['friend'].upper()
+    #friend_id = os.environ.get(name)
     amount = request_data[id]['amount']
     memo = request_data[id]['reason']
     client.payment.request_money(amount, memo, friend_id)
