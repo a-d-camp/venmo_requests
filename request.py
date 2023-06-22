@@ -1,6 +1,5 @@
 from venmo_api import Client
 from dotenv import load_dotenv
-from wonderwords import RandomWord
 import pandas as pd
 import os
 
@@ -8,9 +7,6 @@ import os
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv()
 access_token = os.environ.get('VENMO_ACCESS_TOKEN')
-
-# random words for fun memos
-r = RandomWord()
 
 # load request info from file
 request_data = pd.read_csv('./request_data.csv')
@@ -24,6 +20,5 @@ for id in request_data:
     friend_id = request_data[id]['friend_id']
     amount = request_data[id]['amount']
     memo = request_data[id]['reason']
-    # memo = r.word(include_parts_of_speech=["nouns", "adjectives"])
     client.payment.request_money(amount, memo, friend_id)
 
